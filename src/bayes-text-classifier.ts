@@ -28,7 +28,7 @@ export default class BayesTextClassifier<T> {
   }
 
   /**
-   * learn an exerpt of text
+   * learn an excerpt of text
    * @param text the text to learn
    * @param classType expected class for the model to predict
    * @returns this
@@ -42,7 +42,7 @@ export default class BayesTextClassifier<T> {
   }
 
   /**
-   * classify an exerpt of text
+   * classify an excerpt of text
    * @param text the text to classify
    * @returns classification prediction
    */
