@@ -24,6 +24,11 @@ console.log(classifier.classifyText("im bad"));
 
 This is a an implementation of a multinomial naive bayes classifier in pure javascript, which means you can use it anywhere you can use javascript.
 
+## What is a Naive Bayes Classifier?
+
+Naive bayes classifiers are simple classifiers often used in text classification tasks, such as, famously, detecting whether or not a given email is spam or not spam. Naive bayes classifiers are useful when you have sparse data, intractably many parameters, or when you to train the model in linear time.
+
+https://en.wikipedia.org/wiki/Naive_Bayes_classifier
 
 ## Examples
 
