@@ -9,6 +9,8 @@ npm i bayes-text-classifier
 ## Usage
 
 ```typescript
+import { BayesTextClassifier } from 'bayes-text-classifier';
+
 const classifier = new BayesTextClassifier();
 classifier.learnText("i am feeling good today", "good");
 classifier.learnText("i am feeling bad today", "bad");
