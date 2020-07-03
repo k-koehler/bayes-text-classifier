@@ -28,5 +28,13 @@ describe("utils", () => {
         "?",
       ]);
     });
+
+    it("should skip punctuation", () => {
+      expect(tokenizeEnglishText("ok. good! confused?", false)).toEqual([
+        "ok",
+        "good",
+        "confused",
+      ]);
+    });
   });
 });
