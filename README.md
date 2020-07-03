@@ -37,7 +37,13 @@ classifier.learnText("i am feeling good today", "good");
 classifier.learnText("i am feeling bad today", "bad");
 const str = classifier.dump();
 console.log(str);
-// {"tokenizePunctuation":true,"multinomialNaiveBayesClassifier":"{\"alpha\":1e-9,\"classRelativeFeatureFrequencies\":[[\"good\",\"[[\\\"i\\\",1],[\\\"am\\\",1],[\\\"feeling\\\",1],[\\\"good\\\",1],[\\\"today\\\",1]]\"],[\"bad\",\"[[\\\"i\\\",1],[\\\"am\\\",1],[\\\"feeling\\\",1],[\\\"bad\\\",1],[\\\"today\\\",1]]\"]],\"classTypeFrequencyCounter\":\"[[\\\"good\\\",1],[\\\"bad\\\",1]]\",\"n\":2}"}
+// {"tokenizePunctuation":true,"multinomialNaiveBayesClassifier":
+// "{\"alpha\":1e-9,\"classRelativeFeatureFrequencies\"
+// :[[\"good\",\"[[\\\"i\\\",1],[\\\"am\\\",1],[\\\"feeling\\\",1],
+// [\\\"good\\\",1],[\\\"today\\\",1]]\"],[\"bad\",\"[[\\\"i\\\",1],
+// [\\\"am\\\",1],[\\\"feeling\\\",1],[\\\"bad\\\",1],[\\\"today\\\",
+// 1]]\"]],\"classTypeFrequencyCounter\":\"[[\\\"good\\\",1],
+// [\\\"bad\\\",1]]\",\"n\":2}"}
 ```
 
 Reloading the model is as easy as:
