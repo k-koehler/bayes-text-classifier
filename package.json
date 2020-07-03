@@ -1,8 +1,9 @@
 {
   "name": "bayes-text-classifier",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "naive bayes text classifier and multinomial naive bayes classifier",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "jest"
