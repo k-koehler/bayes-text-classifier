@@ -6,10 +6,7 @@ const data = fs
   .readFileSync("./spam_ham.txt")
   .toString()
   .split("\n")
-  .map((s) => {
-    const [category, ...words] = s.split("\t");
-    return [category, words.join(" ")];
-  });
+  .map((s) => s.split("\t"));
 const clf = new BayesTextClassifier();
 const [train, test] = trainTestSplit(data, 0.8);
 for (const [category, text] of train) {
