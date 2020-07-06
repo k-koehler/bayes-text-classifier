@@ -89,7 +89,7 @@ for (const [category, text] of test) {
 console.log("Accuracy=", correct / test.length || 0);
 ```
 
-We can see that this model gives great performance. Since the model is validated on a random subset of the data, I've ran the above code 5 times, so you can see it's output on 5 random subsets of the data.
+We can see that this model gives great performance. Since the model is validated on a random subset of the data, I've ran the above code 5 times, so you can see it's output on 5 random subsets of the data. An accuracy above 90% can be considered great performance.
 
 ```
 ➜  examples git:(master) node spam-classifier.js
@@ -103,3 +103,5 @@ Accuracy= 0.9820627802690582
 ➜  examples git:(master) node spam-classifier.js
 Accuracy= 0.9847533632286996
 ```
+
+Please note that the above dataset may or may not be as challenging as a real life dataset. The point of this example is to show that the model works, and is simple to use.
