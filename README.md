@@ -60,3 +60,46 @@ console.log(newClassifier.classifyText("im good"));
 console.log(newClassifier.classifyText("im bad"));
 // bad
 ```
+
+### Classifying Spam vs "Ham"
+
+In this classic example, we load a dataset of spam vs. not-spam ("ham") emails and attempt to classify each email correctly. We split the data into randomized training and testing sets, and then just learn on each example.
+
+```typescript
+const fs = require("fs");
+const { BayesTextClassifier } = require("bayes-text-classifier");
+const trainTestSplit = require("train-test-split");
+
+const data = fs
+  .readFileSync("./spam_ham.txt")
+  .toString()
+  .split("\n")
+  .map((s) => s.split("\t"));
+const clf = new BayesTextClassifier();
+const [train, test] = trainTestSplit(data, 0.8);
+for (const [category, text] of train) {
+  clf.learnText(text, category);
+}
+let correct = 0;
+for (const [category, text] of test) {
+  if (clf.classifyText(text) === category) {
+    ++correct;
+  }
+}
+console.log("Accuracy=", correct / test.length || 0);
+```
+
+We can see that this model gives great performance. Since the model is validated on a random subset of the data, I've ran the above code 5 times, so you can see it's output on 5 random subsets of the data.
+
+```
+➜  examples git:(master) node spam-classifier.js
+Accuracy= 0.9775784753363229
+➜  examples git:(master) node spam-classifier.js
+Accuracy= 0.9775784753363229
+➜  examples git:(master) node spam-classifier.js
+Accuracy= 0.9847533632286996
+➜  examples git:(master) node spam-classifier.js
+Accuracy= 0.9820627802690582
+➜  examples git:(master) node spam-classifier.js
+Accuracy= 0.9847533632286996
+```
